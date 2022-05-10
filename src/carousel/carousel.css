@@ -1,0 +1,81 @@
+.carousel{
+    display: flex;
+    flex-direction: row;
+    width:600px;
+    max-width: 98%;
+    overflow:hidden;
+}
+
+.carousel .carousel-wrapper{
+    display: flex;
+    flex-direction: inherit;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width:max-content;
+    transition:transform var(--carousel-transition-ms) ease;
+}
+
+.carousel .carousel-button{
+    position: absolute;
+    top:50%;
+    background-color:rgba(0, 0, 0, 0.4);
+    padding:8px;
+    color:rgba(255, 255, 255, 0.6);
+    font-size:1rem;
+    border:none;
+    transform:translateY(-50%);
+    z-index: 1000;
+}
+
+.carousel .carousel-button:hover{
+    color:rgba(255, 255, 255, 0.8);
+}
+
+.carousel .carousel-button.right{
+    right:0;
+    transform:translateY(-50%) rotateZ(180deg);
+}
+
+.carousel .carousel-button.left{
+    left:0;
+}
+
+.carousel.second {
+    width: 98%;
+    height:300px;
+    overflow: visible;
+}
+
+.carousel.second .carousel-wrapper {
+    position: relative;
+    width:100%;
+}
+.carousel.second .slide{
+    position: absolute;
+    transition: left 300ms ease,
+                opacity 200ms ease-in-out;
+    transform:translate(-50%);
+    margin:0 !important;
+}
+
+.noTrans{
+    transition: left 0ms ease,
+                opacity 0ms ease-in-out;
+}
+
+.carousel.third {
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.carousel.third .carousel-wrapper {
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+}
+
+.carousel.third .carousel-wrapper > * {
+    flex-shrink: 0;
+    margin:  10.5px;
+}
+
